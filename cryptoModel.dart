@@ -17,9 +17,19 @@ class CryptoModel{
     this.price_change_percentage_24h,this.ath,this.atl});
 
   factory CryptoModel.fromJson(Map<String,dynamic>coins){
-    return CryptoModel(id:coins['id'],symbol:coins['symbol'],name:coins['name'],image:coins['image'],
-    current_price:coins['current_price'],market_cap_rank:coins['market_cap_rank'],
-    high_24h:coins['high_24h'],low_24h:coins['low_24h'],price_change_24h: coins['price_change_24h'],
-    price_change_percentage_24h: coins['price_change_percentage_24h'],ath:coins['ath'],atl: coins['atl']);
+    return CryptoModel(
+      id:coins['id'],
+      symbol:coins['symbol'],
+      name:coins['name'],
+      image:coins['image'],
+      current_price:double.parse(coins['current_price'].toString()),
+      market_cap_rank:coins['market_cap_rank'],
+      high_24h:double.parse(coins['high_24h'].toString()),
+      low_24h:double.parse(coins['low_24h'].toString()),
+      price_change_24h: double.parse(coins['price_change_24h'].toString()),
+      price_change_percentage_24h: double.parse(coins['price_change_percentage_24h'].toString()),
+      ath:double.parse(coins['ath'].toString()),
+      atl: double.parse(coins['atl'].toString()));
   }
 }
+
